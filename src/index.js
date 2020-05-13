@@ -8,7 +8,7 @@ const io=socketio(server);
 const path=require('path');
 const {generateMessage,generateLocationMessage}=require('./utils/message');
 const { addUser, removeUser, getUser, getUserInRoom}=require('./utils/users');
-const port=3000||process.env.PORT;
+const port=process.env.PORT || 3000;
 const publicDirectoryPath=path.join(__dirname,'../public');
 app.use(express.static(publicDirectoryPath));
 io.on('connection',(socket)=>{
